@@ -1,0 +1,87 @@
+.header {
+  .navbar {
+    padding: 2.5rem 2rem;
+    position: relative;
+    background-color: $color-white;
+  }
+
+  &__hamburger {
+    > span {
+      display: block;
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: $color-blue;
+      transform-origin: 3px 1px;
+      transition: all 0.3s;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  &.open {
+    .overlay {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out forwards;
+    }
+    .header__hamburger {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-2rem);
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &__nav-link {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    font-weight: 400;
+    border-bottom: 0.4rem solid transparent;
+
+    a {
+      color: $grayish-blue;
+      transition: color 0.2s;
+      padding-bottom: 1.5rem;
+
+      &:hover {
+        color: $color-blue;
+        border-bottom: 0.4rem solid $color-cyan;
+      }
+    }
+  }
+  .overlay {
+    position: fixed;
+    top: 7rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient($color-blue, transparent);
+    opacity: 0;
+    z-index: 4;
+  }
+  &__menu {
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: $color-white;
+    margin-top: 3.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    z-index: 99;
+
+    a {
+      display: block;
+      padding: 1rem;
+      color: $color-blue;
+      text-align: center;
+    }
+  }
+}

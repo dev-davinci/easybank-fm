@@ -1,0 +1,124 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // TO MAKE THE DEFAULT SIZE: 10px
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+
+  &.menu-scroll {
+    overflow: hidden; // To prevent user from scrolling when the mobile menu is open
+  }
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: $color-black;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+// MAIN BUTTON
+.btn {
+  border: none;
+  background-image: linear-gradient(to bottom left, $color-green, $color-cyan);
+  border-radius: 20rem;
+  color: $color-white;
+  padding: 1.3rem 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: opacity 0.3s;
+  display: inline-block;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// UTILTIES
+.flex {
+  display: flex;
+
+  &-jc-sp {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+.container {
+  max-width: 112rem;
+  margin: 0 auto;
+
+  &--pxy {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+  &--py {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  &--px {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+  &--pt {
+    padding-top: 3.5rem;
+  }
+  &--pb {
+    padding-bottom: 3.5rem;
+  }
+  &--pl {
+    padding-left: 2.4rem;
+  }
+  &--pr {
+    padding-right: 2.4rem;
+  }
+}
+.mt {
+  margin-top: 4rem;
+}
+
+.mb {
+  margin-bottom: 4rem;
+}
+
+// VISIBILTY
+
+.hidden-on-mobile {
+  @include breakpoints-down(small) {
+    display: none;
+  }
+}
+
+.hidden-on-desktop {
+  @include breakpoints-up(medium) {
+    display: none;
+  }
+}

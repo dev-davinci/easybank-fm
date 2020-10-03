@@ -1,0 +1,35 @@
+.heading-1 {
+  font-size: 4rem;
+  color: $color-blue;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+
+  @include breakpoints-up(large) {
+    text-align: left;
+    font-size: 5rem;
+  }
+}
+
+.heading-2 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  text-align: center;
+  padding-bottom: 4rem;
+  @include breakpoints-up(large) {
+    text-align: left;
+  }
+}
+
+.leading {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  text-align: center;
+  color: $grayish-blue;
+  margin: 3rem 0;
+  @include breakpoints-up(large) {
+    text-align: left;
+    font-size: 1.7rem;
+  }
+}

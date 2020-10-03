@@ -1,0 +1,49 @@
+.articles {
+  background-color: $very-light-gray;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2rem;
+  }
+
+  &__item {
+    background-color: $color-white;
+    box-shadow: 0 0.2rem 0.5rem rgba($color-black, 0.2);
+    transition: all 0.3s;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    height: 18rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.5rem;
+  }
+
+  &__text {
+    padding: 1.8rem 2rem 3rem 2rem;
+    color: $grayish-blue;
+  }
+
+  &__author {
+    margin-bottom: 1.3rem;
+  }
+
+  &__title {
+    color: $color-blue;
+    margin-bottom: 1.3rem;
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  &__description {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+}

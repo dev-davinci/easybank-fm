@@ -1,0 +1,56 @@
+.features {
+  background-color: $light-grayish-blue;
+
+  @include breakpoints-up(large) {
+    margin-top: -11rem;
+  }
+  &__intro {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  &__grid {
+    @include breakpoints-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+      padding-right: 1rem;
+    }
+    @include breakpoints-up(medium) {
+      text-align: left;
+      flex: 0 0 50%;
+    }
+    @include breakpoints-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    img {
+      display: inline-block;
+      padding: 1.5rem 0;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    color: $grayish-blue;
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
